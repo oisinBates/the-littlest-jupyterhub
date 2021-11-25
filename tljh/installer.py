@@ -167,11 +167,11 @@ def ensure_user_environment(user_requirements_txt_file):
     # Check system architecture, set appropriate installer checksum
     if os.uname().machine == "aarch64":
         installer_sha256 = (
-            "ac95f137b287b3408e4f67f07a284357b1119ee157373b788b34e770ef2392b2"
+            "7f1403f391b2e11614d491ec97a90df5a6304adebeb0a880f047a41e00c87fca"
         )
     elif os.uname().machine == "x86_64":
         installer_sha256 = (
-            "fc872522ec427fcab10167a93e802efaf251024b58cc27b084b915a9a73c4474"
+            "b207959f04fe03cfb35c1e71f8d6efcceab3298c6e00570081e8d04d58066879"
         )
     # Check OS, set appropriate string for conda installer path
     if os.uname().sysname != "Linux":
