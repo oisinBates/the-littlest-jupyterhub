@@ -190,7 +190,7 @@ def ensure_user_environment(user_requirements_txt_file):
     # If no prior miniconda installation is found, we can install a newer version
     else:
         logger.info("Downloading & setting up user environment...")
-        installer_url = "https://github.com/conda-forge/miniforge/releases/download/{v}/Mambaforge-{v}-Linux-{arch}.sh".format(
+        installer_url = "https://github.com/conda-forge/miniforge/releases/download/{v}/Mambaforge-pypy3-{v}-Linux-{arch}.sh".format(
             v=mambaforge_new_version, arch=os.uname().machine
         )
         with conda.download_miniconda_installer(
