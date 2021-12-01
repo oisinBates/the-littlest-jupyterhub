@@ -205,7 +205,7 @@ def ensure_user_environment(user_requirements_txt_file):
             # Conda's latest version is on conda much more so than on PyPI.
             "conda==" + conda_version,
             "mamba==" + mambaforge_mamba_version,
-            "python==3.7" 
+            "python==3.7.10" 
         ],
     )
 
