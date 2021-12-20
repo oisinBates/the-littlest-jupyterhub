@@ -87,6 +87,7 @@ def apply_config(config_overrides, c):
     Merge config_overrides with config defaults & apply to JupyterHub config c
     """
     tljh_config = _merge_dictionaries(dict(default), config_overrides)
+    validate_config_overrides(dict(default), config_overrides)
 
     update_base_url(c, tljh_config)
     update_auth(c, tljh_config)
@@ -318,3 +319,12 @@ def _merge_dictionaries(a, b, path=None, update=True):
         else:
             a[key] = b[key]
     return a
+
+def validate_config_overrides(default_config, config_overrides):
+    """
+    Check for unsupported config overrides
+    """
+    config_diff = default_config.items() ^ config_overrides.items()
+    
+    if config_diff:
+        print("Warning: Unable to set config for: " + str(config_diff) + "\n please refer to https://tljh.jupyter.org/en/latest/topic/tljh-config.html")
